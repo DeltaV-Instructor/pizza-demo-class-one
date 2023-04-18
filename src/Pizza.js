@@ -1,4 +1,7 @@
 import React from "react";
+import Button from 'react-bootstrap/Button';
+import './pizza.css';
+
 
 class Pizza extends React.Component {
   constructor(props) {
@@ -24,17 +27,23 @@ class Pizza extends React.Component {
 
   pizzaNeeded = () => {
     //add a method to set state to be true
+    this.setState({
+      pizzaNeeded: true
+    })
   };
 
   pizzaGot = () => {
     //set state to be false.
+    this.setState({
+      pizzaNeeded: false
+    })
   };
 
   render() {
     return (
       <>
         <article>
-          <h3>{this.props.pie}</h3>
+          <h3> 🍕 {this.props.pie}</h3>
           <p> {this.state.likes}Likes!</p>
           <p onClick={this.handleLikes}>Click to like this Pizza</p>
           <img src={this.props.imageURL} alt={this.props.pie} />
@@ -49,7 +58,8 @@ class Pizza extends React.Component {
         */}
 
         <div>{this.state.pizzaNeeded ? 'I need this Pizza!' : 'hey IM good'}</div>
-        
+        <Button variant="success"  onClick={this.pizzaNeeded}>I need this Pizza!</Button>
+        <Button variant="warning"  onClick={this.pizzaGot}>I got this pizza!</Button>
         </article>
       </>
     );

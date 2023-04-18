@@ -1,8 +1,7 @@
 import React from 'react';
 import Pizza from './Pizza.js';
 import data from './data.json';
-
-
+import './main.css';
 
 
 class Main extends React.Component {
