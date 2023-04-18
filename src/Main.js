@@ -13,7 +13,7 @@ class Main extends React.Component {
 
     let pizzas = [];
     data.forEach((newPizza, index) => {
-      pizzas.push(<Pizza pie={newPizza.name}  imageURL={newPizza.imageURL}  />)
+      pizzas.push(<Pizza pie={newPizza.name}  imageURL={newPizza.imageURL} key={index} />)
     });
 
 
